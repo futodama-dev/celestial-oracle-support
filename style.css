@@ -1,0 +1,203 @@
+/* Celestial Oracle サポートサイト 共通スタイル
+   外部フォント・外部画像・CDNは使用しない(OS標準フォントのみ)。 */
+
+:root {
+  --color-bg: #ffffff;
+  --color-text: #23201c;
+  --color-text-soft: #55504a;
+  --color-accent: #6f4931;
+  --color-rule: #e6e0d6;
+  --color-surface: #fbfaf7;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.9;
+  overflow-x: hidden;
+}
+
+.page {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 20px 64px;
+}
+
+/* ヘッダー */
+.site-header {
+  border-bottom: 1px solid var(--color-rule);
+  margin-bottom: 40px;
+  padding: 28px 0 20px;
+}
+
+.site-header .site-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 10px;
+}
+
+.site-header .site-title a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  font-size: 13px;
+}
+
+.site-nav a {
+  color: var(--color-text-soft);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+.site-nav .lang-switch {
+  margin-left: auto;
+}
+
+/* 見出し */
+h1 {
+  font-size: 26px;
+  line-height: 1.5;
+  margin: 0 0 18px;
+}
+
+h2 {
+  font-size: 19px;
+  line-height: 1.6;
+  margin: 40px 0 14px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-rule);
+}
+
+h2:first-of-type {
+  margin-top: 32px;
+}
+
+h3 {
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 24px 0 10px;
+  color: var(--color-text);
+}
+
+/* 本文 */
+p {
+  margin: 0 0 16px;
+}
+
+ul,
+ol {
+  margin: 0 0 16px;
+  padding-left: 1.6em;
+}
+
+li {
+  margin-bottom: 8px;
+}
+
+.lede {
+  font-size: 16px;
+  color: var(--color-text-soft);
+  margin-bottom: 8px;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+.updated {
+  color: var(--color-text-soft);
+  font-size: 14px;
+  margin-top: 32px;
+}
+
+/* トップページのカード状リンク */
+.link-list {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+}
+
+.link-list li {
+  margin-bottom: 12px;
+}
+
+.link-list a {
+  display: block;
+  padding: 16px 18px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-rule);
+  border-radius: 6px;
+  color: var(--color-text);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.link-list a:hover,
+.link-list a:focus {
+  border-color: var(--color-accent);
+}
+
+.link-list .desc {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--color-text-soft);
+}
+
+/* 関連ページ・戻る導線 */
+.page-links {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-rule);
+  font-size: 14px;
+}
+
+.page-links a {
+  margin-right: 20px;
+}
+
+/* フッター */
+.site-footer {
+  margin-top: 64px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-rule);
+  color: var(--color-text-soft);
+  font-size: 13px;
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 15.5px;
+  }
+  h1 {
+    font-size: 22px;
+  }
+  h2 {
+    font-size: 17px;
+  }
+}
