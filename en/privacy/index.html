@@ -70,6 +70,15 @@
   <p>The Web version does not currently provide iCloud/CloudKit synchronization, in-app purchases through the App Store/StoreKit, or notifications. Data in the Web version is therefore not synchronized with data in the iOS version.</p>
   <p>The Web version of the App itself does not currently use cookies.</p>
 
+  <h3>(7) Measuring Use of the Web Version</h3>
+  <p>To understand use of the Web version statistically and to evaluate our promotional activities, when the following actions take place in the Web version, the type of action and the minimal information below are sent to a Cloudflare aggregation service used by us and counted.</p>
+  <ul>
+    <li>When the Web version is opened: campaign information about where the visit came from (parameters such as utm_source contained in the URL), the display language, and whether it was launched as an app added to the home screen</li>
+    <li>When a card is drawn: the identifier of the deck used</li>
+    <li>When a reflection is saved: only the fact that it was saved</li>
+  </ul>
+  <p>This measurement does not send the content of reflections, information about drawn cards or history, names, email addresses, or IDs for continuously identifying users or devices, and it does not use cookies.</p>
+
   <h2>3. Purposes of Use</h2>
   <p>Information handled by the App is used for the following purposes:</p>
   <ul>
@@ -80,6 +89,7 @@
     <li>Providing and restoring purchased content</li>
     <li>Storing data so that the Web version can be used offline</li>
     <li>Understanding usage and display performance of the Web version statistically</li>
+    <li>Evaluating promotional activities for the Web version</li>
     <li>Responding to bugs and improving the App</li>
     <li>Responding to inquiries</li>
   </ul>
@@ -98,6 +108,7 @@
   <h3>Cloudflare (Cloudflare Pages / Cloudflare Web Analytics)</h3>
   <p>The Web version is delivered using Cloudflare Pages, provided by Cloudflare, Inc. When the Web version is accessed, information necessary for communication (such as IP address, browser type, and access time) may be processed by Cloudflare.</p>
   <p>To understand usage and display performance of the Web version statistically, we also use Cloudflare Web Analytics. Cloudflare Web Analytics may handle information such as pages viewed, referrers, country or region, device and browser type, and performance. We use Cloudflare Web Analytics in a configuration that does not use cookies.</p>
+  <p>The measurement described in 2.(7) uses Cloudflare Pages Functions and Cloudflare Workers Analytics Engine.</p>
   <p>Information handled by Cloudflare is subject to <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's Privacy Policy</a> and other applicable terms.</p>
 
   <p>Except where required by law or otherwise justified, we do not provide personal information directly obtained by us to third parties without the user's consent.</p>
