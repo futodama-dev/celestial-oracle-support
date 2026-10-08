@@ -42,7 +42,7 @@
   </ul>
   <p>This information is generally stored locally on the user's device.</p>
   <p>In the iOS version, when iCloud is available, the App may use Apple Inc.'s CloudKit service to synchronize supported data, including draw history, reflections, Favorites, and encountered cards, with the user's iCloud environment.</p>
-  <p>We do not store this information, including the content of reflections, on servers independently operated by us.</p>
+  <p>We do not store this information, including the content of reflections, on servers independently operated by us. However, only when the transfer of data to the Home Screen version of the Web version (see 2.(7)) is used, temporary data encrypted on the user's device is stored on Cloudflare for up to one hour.</p>
 
   <h3>(2) Settings Information</h3>
   <p>The App may store notification settings and other settings required for use of the App locally on the user's device.</p>
@@ -65,12 +65,18 @@
 
   <h3>(6) Web Version</h3>
   <p>In addition to the iPhone app (the "iOS version"), the App is available as a web version that runs in a web browser (<a href="https://celestial.futodama.app/">https://celestial.futodama.app/</a>) (the "Web version").</p>
-  <p>In the Web version, card history, reflections, Favorites, encountered cards, and related data, as well as settings, are stored locally in the user's browser (for example, in IndexedDB). We do not store this information on servers independently operated by us.</p>
+  <p>In the Web version, card history, reflections, Favorites, encountered cards, and related data, as well as settings, are stored locally in the user's browser (for example, in IndexedDB). We do not store this information on servers independently operated by us (except for the temporary storage for the transfer of data to the Home Screen version described in 2.(7)).</p>
   <p>To allow the Web version to be used offline, it uses a Service Worker and the browser's cache (Cache Storage) to store the files needed to display the App in the browser.</p>
   <p>The Web version does not currently provide iCloud/CloudKit synchronization, in-app purchases through the App Store/StoreKit, or notifications. Data in the Web version is therefore not synchronized with data in the iOS version.</p>
-  <p>The Web version of the App itself does not currently use cookies.</p>
+  <p>The Web version of the App itself does not use cookies, except for the temporary cookie used for the transfer of data to the Home Screen version described in 2.(7).</p>
 
-  <h3>(7) Measuring Use of the Web Version</h3>
+  <h3>(7) Transferring Data to the Home Screen Version</h3>
+  <p>On devices such as iPhone and iPad, when the Web version is added to the Home Screen, the browser and the Web version added to the Home Screen (the "Home Screen version") keep their data in separate storage. We therefore offer a feature that transfers card history, reflections, Favorites, encountered cards, and related data recorded in the browser to the Home Screen version.</p>
+  <p>Only when this transfer is performed, the data needed for the transfer is encrypted on the user's device and temporarily stored on Cloudflare, in encrypted form, for up to one hour. The stored data is deleted when the transfer is completed or when this period expires.</p>
+  <p>For this transfer, a temporary cookie containing the information needed to retrieve and decrypt the data is also used for up to one hour. This cookie is not used for any purpose other than the transfer, and is not used for advertising or for tracking behavior.</p>
+  <p>Only if the cookie is not carried over to the Home Screen version, the same data is retrieved using a temporary code (valid for up to one hour and usable only once) shown in the Settings of the original browser.</p>
+
+  <h3>(8) Measuring Use of the Web Version</h3>
   <p>To understand use of the Web version statistically and to evaluate our promotional activities, when the following actions take place in the Web version, the type of action and the minimal information below are sent to a Cloudflare aggregation service used by us and counted.</p>
   <ul>
     <li>When the Web version is opened: campaign identification parameters contained in the URL (identifiers for the source, medium, campaign, and content), the display language, and whether it was launched as an app added to the home screen</li>
@@ -88,6 +94,7 @@
     <li>Providing notifications configured by the user</li>
     <li>Providing and restoring purchased content</li>
     <li>Storing data so that the Web version can be used offline</li>
+    <li>Transferring data from the Web version to the Home Screen version</li>
     <li>Understanding usage and display performance of the Web version statistically</li>
     <li>Evaluating promotional activities for the Web version</li>
     <li>Responding to bugs and improving the App</li>
@@ -105,10 +112,11 @@
   <p>Apple's App Store and StoreKit may be used for purchasing additional content, verifying purchase status, and restoring previously purchased content.</p>
   <p>Payment information is handled in accordance with Apple's applicable terms and policies.</p>
 
-  <h3>Cloudflare (Cloudflare Pages / Cloudflare Web Analytics)</h3>
+  <h3>Cloudflare (Cloudflare Pages / Cloudflare Web Analytics / Cloudflare Workers)</h3>
   <p>The Web version is delivered using Cloudflare Pages, provided by Cloudflare, Inc. When the Web version is accessed, information necessary for communication (such as IP address, browser type, and access time) may be processed by Cloudflare.</p>
   <p>To understand usage and display performance of the Web version statistically, we also use Cloudflare Web Analytics. Cloudflare Web Analytics may handle information such as pages viewed, referrers, country or region, device and browser type, and performance. We use Cloudflare Web Analytics in a configuration that does not use cookies.</p>
-  <p>The measurement described in 2.(7) uses Cloudflare Pages Functions and Cloudflare Workers Analytics Engine.</p>
+  <p>The measurement described in 2.(8) uses Cloudflare Pages Functions and Cloudflare Workers Analytics Engine.</p>
+  <p>The transfer of data to the Home Screen version described in 2.(7) uses Cloudflare Pages Functions and Cloudflare Workers (Durable Objects) to store the encrypted temporary data.</p>
   <p>Information handled by Cloudflare is subject to <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare's Privacy Policy</a> and other applicable terms.</p>
 
   <p>Except where required by law or otherwise justified, we do not provide personal information directly obtained by us to third parties without the user's consent.</p>
@@ -123,6 +131,7 @@
   <p>However, supported data synchronized through CloudKit, including draw history, reflections, Favorites, and encountered cards, may be restored after reinstalling the App or changing devices when the same Apple Account and compatible iCloud environment are used.</p>
   <p>Certain local settings, including notification settings, may not be restored after reinstalling the App.</p>
   <p>Data in the Web version is stored in the user's browser. If the user deletes site data or browsing data in the browser, data in the Web version, including card history, reflections, and Favorites, may also be deleted, and we cannot restore it. Stored data may also be deleted depending on the browser's specifications or settings.</p>
+  <p>Encrypted temporary data stored for the transfer of data to the Home Screen version described in 2.(7) is deleted when the transfer is completed or, at the latest, one hour after it was stored.</p>
   <p>Storage, synchronization, and deletion of data stored in iCloud are handled using Apple's iCloud and CloudKit systems.</p>
   <p>We do not guarantee that all data will always be synchronized or restored successfully, as this may depend on network conditions, iCloud availability, Apple services, or other circumstances.</p>
   <p>Information voluntarily provided through inquiries may be retained only for as long as reasonably necessary to respond to the inquiry or comply with legal obligations.</p>
@@ -145,7 +154,7 @@
   <p>The revised Privacy Policy becomes effective when posted in the App or on a webpage designated by us.</p>
 
   <p class="updated">Effective date: September 12, 2026<br>
-  Last updated: October 6, 2026</p>
+  Last updated: October 8, 2026</p>
 
   <div class="page-links">
     <a href="../terms/">View Terms of Use</a>
